@@ -2,6 +2,7 @@ import { Badge } from "../ui/badge";
 import image from "../../assets/asset 0.svg";
 import Navbar from "./Home/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "./Home/Footer";
 
 const Homepage = () => {
   return (
@@ -53,6 +54,7 @@ const Homepage = () => {
         </div>
         <img src={image} alt="" className="w-[600px] h-[550px]" />
       </div>
+      <Footer/>
     </>
   );
 };

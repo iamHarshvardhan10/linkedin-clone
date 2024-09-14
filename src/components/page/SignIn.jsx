@@ -3,6 +3,7 @@ import logo from "../../assets/asset 4.svg";
 
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import Footer from "../core/Home/Footer";
 
 const SignIn = () => {
   return (
@@ -73,6 +74,7 @@ const SignIn = () => {
           </Link>
         </p>
       </div>
+      <Footer/>
     </div>
   );
 };

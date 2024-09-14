@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { Checkbox } from "../ui/checkbox";
+import Footer from "../core/Home/Footer";
 
 const JoinNow = () => {
   return (
@@ -76,6 +77,7 @@ const JoinNow = () => {
           Looking to create a page for a business? <span className="text-blue-800 font-semibold">Get help</span> 
         </p>
       </div>
+      <Footer/>
     </div>
   );
 };

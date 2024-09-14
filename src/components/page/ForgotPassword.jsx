@@ -3,6 +3,7 @@ import logo from "../../assets/asset 4.svg";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import Footer from "../core/Home/Footer";
 const ForgotPassword = () => {
   return (
     <div>
@@ -49,6 +50,7 @@ const ForgotPassword = () => {
           </span>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };
