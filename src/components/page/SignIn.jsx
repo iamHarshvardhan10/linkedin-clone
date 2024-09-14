@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/asset 4.svg";
-import { Badge } from "../ui/badge";
+
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
@@ -13,22 +13,22 @@ const SignIn = () => {
         </Link>
       </div>
       <div className="flex items-center justify-center flex-col">
-        <form className="w-[325px] h-[540px] border px-[24px] py-[24px] shadow-lg rounded-lg">
+        <form className="w-[400px] h-[560px] border px-[24px] py-[24px] shadow-lg rounded-lg">
           <h1 className="text-[32px] font-semibold">Sign in</h1>
-          <Badge
+          <Button
             className={
-              "mt-[11px] mb-[12px]  px-[75px] py-[12px]  w-full rounded-full"
+              "mt-[11px] w-full rounded-full py-[24px]"
             }
           >
             Continue with Google
-          </Badge>
-          <Badge
+          </Button>
+          <Button
             className={
-              "mt-[11px] mb-[32px] px-[75px] py-[12px]  w-full rounded-full"
+              "mt-[11px] mb-[32px] w-full rounded-full py-[24px]"
             }
           >
             Sign in with Apple
-          </Badge>
+          </Button>
           <div className="divider flex items-center text-center">
             <span className="whitespace-nowrap text-[14px] text-[#666]">
               or
