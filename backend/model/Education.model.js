@@ -27,7 +27,7 @@ const educationSchemas = new mongoose.Schema({
         type: String,
     },
     activities: {
-        type: String,
+        type: [String],
     },
     description: {
         type: String,
