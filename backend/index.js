@@ -3,6 +3,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import dbConnection from './config/dbConnection.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
+
 
 const app = express();
 
@@ -11,6 +13,7 @@ const PORT = process.env.PORT || 4000
 
 // DataBase Connection 
 dbConnection()
+
 
 
 // json()
