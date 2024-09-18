@@ -1,5 +1,5 @@
-import otpTemplate from "backend/mails/verificationEmailTemplates.js";
-import mailsender from "backend/utils/MailSender.js";
+import otpTemplate from "../mails/verificationEmailTemplates.js";
+import mailsender from "../utils/MailSender.js";
 import mongoose from "mongoose";
 
 const OTPSchema = new mongoose.Schema({
@@ -23,7 +23,7 @@ const OTPSchema = new mongoose.Schema({
 const verificationMail = async (email, otp) => {
     try {
         const mailResponse = await mailsender(email, 'E-Mail Verification', otpTemplate(otp));
-        console.log(mailResponse.response)
+        console.log(mailResponse)
     } catch (error) {
         console.log(error.message)
         throw error;
@@ -39,7 +39,7 @@ OTPSchema.pre('save', async function (next) {
     }
 })
 
-const OTP = mongoose.model("OTP", OTPSchema);
+export const OTP = mongoose.model("OTP", OTPSchema);
 
-export default OTP;
+
 
