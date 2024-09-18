@@ -1,3 +1,5 @@
+import otpTemplate from "backend/mails/verificationEmailTemplates.js";
+import mailsender from "backend/utils/MailSender.js";
 import mongoose from "mongoose";
 
 const OTPSchema = new mongoose.Schema({
@@ -16,4 +18,28 @@ const OTPSchema = new mongoose.Schema({
     }
 })
 
-export const OTP = mongoose.model("OTP", OTPSchema)
+// pre hook for otp sending its always written inside the schema and above of model 
+
+const verificationMail = async (email, otp) => {
+    try {
+        const mailResponse = await mailsender(email, 'E-Mail Verification', otpTemplate(otp));
+        console.log(mailResponse.response)
+    } catch (error) {
+        console.log(error.message)
+        throw error;
+    }
+}
+
+OTPSchema.pre('save', async function (next) {
+    console.log("new document saved to database");
+    if (this.isNew) {
+        await verificationMail(this.email, this.otp);
+
+        next()
+    }
+})
+
+const OTP = mongoose.model("OTP", OTPSchema);
+
+export default OTP;
+
